@@ -1,0 +1,61 @@
+track Kris_Tia1_ASOs
+shortLabel Kris_Tia1_ASOs
+longLabel Kris_Tia1_ASOs
+superTrack on
+
+track KB01_ATCACG_L005_R1.polyATrim
+shortLabel KB01_ATCACG_L005_R1.polyATrim
+longLabel KB01_ATCACG_L005_R1.polyATrim
+type bigWig
+visibility full
+alwaysZero on
+autoScale on
+aggregate transparentOverlay
+showSubtrackColorOnUi on
+parent Kris_Tia1_ASOs
+container multiWig
+
+    track KB01_ATCACG_L005_R1.polyATrim.norm.neg.bw
+    bigDataUrl https://alaindomissy.github.io/KB01_ATCACG_L005_R1.polyATrim.adapterTrim.rmRep.sorted.rg.norm.neg.bw
+    shortLabel KB01_ATCACG_L005_R1.polyATrim.norm.neg.bw
+    longLabel KB01_ATCACG_L005_R1.polyATrim.norm.neg.bw
+    type bigWig
+    color 100,0,0
+    parent KB01_ATCACG_L005_R1.polyATrim
+
+    track KB01_ATCACG_L005_R1.polyATrim.norm.pos.bw
+    bigDataUrl https://alaindomissy.github.io/KB01_ATCACG_L005_R1.polyATrim.adapterTrim.rmRep.sorted.rg.norm.pos.bw
+    shortLabel KB01_ATCACG_L005_R1.polyATrim.norm.pos.bw
+    longLabel KB01_ATCACG_L005_R1.polyATrim.norm.pos.bw
+    type bigWig
+    color 0,100,0
+    parent KB01_ATCACG_L005_R1.polyATrim
+
+track KB02_TTAGGC_L005_R1.polyATrim
+shortLabel KB02_TTAGGC_L005_R1.polyATrim
+longLabel KB02_TTAGGC_L005_R1.polyATrim
+type bigWig
+visibility full
+alwaysZero on
+autoScale on
+aggregate transparentOverlay
+showSubtrackColorOnUi on
+parent Kris_Tia1_ASOs
+container multiWig
+
+    track KB02_TTAGGC_L005_R1.polyATrim.norm.neg.bw
+    bigDataUrl https://alaindomissy.github.io/KB02_TTAGGC_L005_R1.polyATrim.adapterTrim.rmRep.sorted.rg.norm.neg.bw
+    shortLabel KB02_TTAGGC_L005_R1.polyATrim.norm.neg.bw
+    longLabel KB02_TTAGGC_L005_R1.polyATrim.norm.neg.bw
+    type bigWig
+    color 100,0,0
+    parent KB02_TTAGGC_L005_R1.polyATrim
+
+    track KB02_TTAGGC_L005_R1.polyATrim.norm.pos.bw
+    bigDataUrl https://alaindomissy.github.io/KB02_TTAGGC_L005_R1.polyATrim.adapterTrim.rmRep.sorted.rg.norm.pos.bw
+    shortLabel KB02_TTAGGC_L005_R1.polyATrim.norm.pos.bw
+    longLabel KB02_TTAGGC_L005_R1.polyATrim.norm.pos.bw
+    type bigWig
+    color 0,100,0
+    parent KB02_TTAGGC_L005_R1.polyATrim
+

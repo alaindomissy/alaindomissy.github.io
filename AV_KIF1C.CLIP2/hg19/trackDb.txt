@@ -1,4 +1,0 @@
-track AV_KIF1C.NPUT2
-shortLabel AV_KIF1C.NPUT2
-longLabel AV_KIF1C.NPUT2
-superTrack on
