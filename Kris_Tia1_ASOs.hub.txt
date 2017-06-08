@@ -1,5 +1,0 @@
-hub Kris_Tia1_ASOs
-shortLabel Kris_Tia1_ASOs
-longLabel Kris_Tia1_ASOs
-genomesFile Kris_Tia1_ASOs.genomes.txt
-email gpratt@ucsd.edu
