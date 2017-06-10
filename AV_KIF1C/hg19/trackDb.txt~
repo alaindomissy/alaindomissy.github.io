@@ -16,7 +16,7 @@ parent AV_KIF1C
 container multiWig
 
     track KB01_ATCACG_L005_R1.polyATrim.norm.neg.bw
-    bigDataUrl https://alaindomissy.github.io/AV_KIF1C/hg19/AV_KIF1C.CLIP1.---.r-.fqTrTrU-SoMaSoCoSoMeV2.neg.bw
+    bigDataUrl https://alaindomissy.github.io/AV_KIF1C/mm10/AV_KIF1C.CLIP1.---.r-.fqTrTrU-SoMaSoCoSoMeV2.neg.bw
     shortLabel AV_KIF1C.CLIP1.---.r-.fqTrTrU-SoMaSoCoSoMeV2.neg.bw
     longLabel AV_KIF1C.CLIP1.---.r-.fqTrTrU-SoMaSoCoSoMeV2.neg.bw
     type bigWig
@@ -24,7 +24,7 @@ container multiWig
     parent AV_KIF1C.CLIP1.---.r-.fqTrTrU-SoMaSoCoSoMeV2
 
     track KB01_ATCACG_L005_R1.polyATrim.norm.pos.bw
-    bigDataUrl https://alaindomissy.github.io/AV_KIF1C/hg19/AV_KIF1C.CLIP1.---.r-.fqTrTrU-SoMaSoCoSoMeV2.pos.bw
+    bigDataUrl https://alaindomissy.github.io/AV_KIF1C/mm10/AV_KIF1C.CLIP1.---.r-.fqTrTrU-SoMaSoCoSoMeV2.pos.bw
     shortLabel AV_KIF1C.CLIP1.---.r-.fqTrTrU-SoMaSoCoSoMeV2.pos.bw
     longLabel AV_KIF1C.CLIP1.---.r-.fqTrTrU-SoMaSoCoSoMeV2.pos.bw
     type bigWig
@@ -44,7 +44,7 @@ parent AV_KIF1C
 container multiWig
 
     track KB02_TTAGGC_L005_R1.polyATrim.norm.neg.bw
-    bigDataUrl https://alaindomissy.github.io/AV_KIF1C/hg19/AV_KIF1C.CLIP2.---.r-.fqTrTrU-SoMaSoCoSoMeV2.neg.bw
+    bigDataUrl https://alaindomissy.github.io/AV_KIF1C/mm10/AV_KIF1C.CLIP2.---.r-.fqTrTrU-SoMaSoCoSoMeV2.neg.bw
     shortLabel AV_KIF1C.CLIP2.---.r-.fqTrTrU-SoMaSoCoSoMeV2.neg.bw
     longLabel AV_KIF1C.CLIP2.---.r-.fqTrTrU-SoMaSoCoSoMeV2.neg.bw
     type bigWig
@@ -52,7 +52,7 @@ container multiWig
     parent AV_KIF1C.CLIP2.---.r-.fqTrTrU-SoMaSoCoSoMeV2
 
     track KB02_TTAGGC_L005_R1.polyATrim.norm.pos.bw
-    bigDataUrl https://alaindomissy.github.io/AV_KIF1C/hg19/AV_KIF1C.CLIP2.---.r-.fqTrTrU-SoMaSoCoSoMeV2.pos.bw
+    bigDataUrl https://alaindomissy.github.io/AV_KIF1C/mm10/AV_KIF1C.CLIP2.---.r-.fqTrTrU-SoMaSoCoSoMeV2.pos.bw
     shortLabel AV_KIF1C.CLIP2.---.r-.fqTrTrU-SoMaSoCoSoMeV2.pos.bw
     longLabel AV_KIF1C.CLIP2.---.r-.fqTrTrU-SoMaSoCoSoMeV2.pos.bw
     type bigWig
