@@ -1,0 +1,5 @@
+hub CLIP1
+shortLabel CLIP1
+longLabel CLIP1
+genomesFile CLIP1.genomes.txt
+email adomissy@ucsd.edu
