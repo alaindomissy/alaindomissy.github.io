@@ -1,0 +1,58 @@
+track kbp550.CLIP1
+shortLabel kbp550.CLIP1
+longLabel kbp550.CLIP1
+type bigWig
+visibility full
+alwaysZero on
+autoScale on
+aggregate transparentOverlay
+showSubtrackColorOnUi on
+container multiWig
+
+    track kbp550.CLIP1.fqTrTrU-SoMaSoCoSoMeV2.pos.bw
+    bigDataUrl http://alaindomissy.github.io/CLIP1/hg19chr19kbp550/kbp550.CLIP1.---.r-.fqTrTrU-SoMaSoCoSoMeV2.pos.bw
+    shortLabel kbp550.CLIP1.fqTrTrU-SoMaSoCoSoMeV2.pos.bw
+    longLabel kbp550.CLIP1.fqTrTrU-SoMaSoCoSoMeV2.pos.bw
+    type bigWig
+    color 0,100,0
+    parent kbp550.CLIP1
+
+    track kbp550.CLIP1.fqTrTrU-SoMaSoCoSoMeV2.neg.bw
+    bigDataUrl http://alaindomissy.github.io/CLIP1/hg19chr19kbp550/kbp550.CLIP1.---.r-.fqTrTrU-SoMaSoCoSoMeV2.neg.bw
+    shortLabel kbp550.CLIP1.fqTrTrU-SoMaSoCoSoMeV2.neg.bw
+    longLabel kbp550.CLIP1.fqTrTrU-SoMaSoCoSoMeV2.neg.bw
+    type bigWig
+    color 100,0,0
+    parent kbp550.CLIP1
+
+track CLIP1
+shortLabel CLIP1
+longLabel CLIP1
+superTrack on
+
+track kbp550.CLIP1
+shortLabel kbp550.CLIP1
+longLabel kbp550.CLIP1
+type bigWig
+visibility full
+alwaysZero on
+autoScale on
+aggregate transparentOverlay
+showSubtrackColorOnUi on
+container multiWig
+
+    track kbp550.CLIP1.fqTrTrU-SoMaSoCoSoMeV2.pos.bw
+    bigDataUrl http://alaindomissy.github.io/CLIP1/hg19chr19kbp550/kbp550.CLIP1.---.r-.fqTrTrU-SoMaSoCoSoMeV2.pos.bw
+    shortLabel kbp550.CLIP1.fqTrTrU-SoMaSoCoSoMeV2.pos.bw
+    longLabel kbp550.CLIP1.fqTrTrU-SoMaSoCoSoMeV2.pos.bw
+    type bigWig
+    color 0,100,0
+    parent kbp550.CLIP1
+
+    track kbp550.CLIP1.fqTrTrU-SoMaSoCoSoMeV2.neg.bw
+    bigDataUrl http://alaindomissy.github.io/CLIP1/hg19chr19kbp550/kbp550.CLIP1.---.r-.fqTrTrU-SoMaSoCoSoMeV2.neg.bw
+    shortLabel kbp550.CLIP1.fqTrTrU-SoMaSoCoSoMeV2.neg.bw
+    longLabel kbp550.CLIP1.fqTrTrU-SoMaSoCoSoMeV2.neg.bw
+    type bigWig
+    color 100,0,0
+    parent kbp550.CLIP1

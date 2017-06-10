@@ -1,0 +1,5 @@
+hub INPUT
+shortLabel INPUT
+longLabel INPUT
+genomesFile INPUT.genomes.txt
+email adomissy@ucsd.edu
