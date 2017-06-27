@@ -1,12 +1,3 @@
-track kbp550.CLIP1.bb
-bigDataUrl http://alaindomissy.github.io//kbp550_CLIP1_hub/hg19/kbp550.CLIP1.---.r-.fqTrTrU-SoMaSoCoSoMeV2ClFiSo.bb
-shortLabel kbp550.CLIP1.bb
-longLabel kbp550.CLIP1.bb
-type bigBed
-visibility full
-color 100,0,0
-parent kbp550_CLIP1_hub
-
 track kbp550_CLIP1_hub
 shortLabel kbp550_CLIP1_hub
 longLabel kbp550_CLIP1_hub
