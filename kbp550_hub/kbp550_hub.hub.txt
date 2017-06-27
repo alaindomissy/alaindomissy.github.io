@@ -1,5 +1,0 @@
-hub kbp550_hub
-shortLabel kbp550_hub
-longLabel kbp550_hub
-genomesFile kbp550_hub.genomes.txt
-email adomissy@ucsd.edu
