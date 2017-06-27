@@ -1,0 +1,50 @@
+track kbp550.CLIP2.bb
+bigDataUrl http://alaindomissy.github.io//kbp550_CLIP2_hub/hg19/kbp550.CLIP2.---.r-.fqTrTrU-SoMaSoCoSoMeV2ClFiSo.bb
+shortLabel kbp550.CLIP2.bb
+longLabel kbp550.CLIP2.bb
+type bigBed
+visibility full
+color 100,0,0
+parent kbp550_CLIP2_hub
+
+track kbp550_CLIP2_hub
+shortLabel kbp550_CLIP2_hub
+longLabel kbp550_CLIP2_hub
+superTrack on
+
+track kbp550.CLIP2
+shortLabel kbp550.CLIP2
+longLabel kbp550.CLIP2
+type bigWig
+visibility full
+alwaysZero on
+autoScale on
+aggregate transparentOverlay
+showSubtrackColorOnUi on
+parent kbp550_CLIP2_hub
+container multiWig
+
+    track kbp550.CLIP2.fqTrTrU-SoMaSoCoSoMeV2.pos.bw
+    bigDataUrl http://alaindomissy.github.io//kbp550_CLIP2_hub/hg19/kbp550.CLIP2.---.r-.fqTrTrU-SoMaSoCoSoMeV2.pos.bw
+    shortLabel kbp550.CLIP2.fqTrTrU-SoMaSoCoSoMeV2.pos.bw
+    longLabel kbp550.CLIP2.fqTrTrU-SoMaSoCoSoMeV2.pos.bw
+    type bigWig
+    color 0,100,0
+    parent kbp550.CLIP2
+
+    track kbp550.CLIP2.fqTrTrU-SoMaSoCoSoMeV2.neg.bw
+    bigDataUrl http://alaindomissy.github.io//kbp550_CLIP2_hub/hg19/kbp550.CLIP2.---.r-.fqTrTrU-SoMaSoCoSoMeV2.neg.bw
+    shortLabel kbp550.CLIP2.fqTrTrU-SoMaSoCoSoMeV2.neg.bw
+    longLabel kbp550.CLIP2.fqTrTrU-SoMaSoCoSoMeV2.neg.bw
+    type bigWig
+    color 100,0,0
+    parent kbp550.CLIP2
+
+track kbp550.CLIP2.bb
+bigDataUrl http://alaindomissy.github.io//kbp550_CLIP2_hub/hg19/kbp550.CLIP2.---.r-.fqTrTrU-SoMaSoCoSoMeV2ClFiSo.bb
+shortLabel kbp550.CLIP2.bb
+longLabel kbp550.CLIP2.bb
+type bigBed
+visibility full
+color 100,0,0
+parent kbp550_CLIP2_hub

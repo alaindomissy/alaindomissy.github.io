@@ -1,30 +1,3 @@
-track kbp550.CLIP1
-shortLabel kbp550.CLIP1
-longLabel kbp550.CLIP1
-type bigWig
-visibility full
-alwaysZero on
-autoScale on
-aggregate transparentOverlay
-showSubtrackColorOnUi on
-container multiWig
-
-    track kbp550.CLIP1.fqTrTrU-SoMaSoCoSoMeV2.pos.bw
-    bigDataUrl http://alaindomissy.github.io//kbp550_CLIP1_hub/hg19/kbp550.CLIP1.---.r-.fqTrTrU-SoMaSoCoSoMeV2.pos.bw
-    shortLabel kbp550.CLIP1.fqTrTrU-SoMaSoCoSoMeV2.pos.bw
-    longLabel kbp550.CLIP1.fqTrTrU-SoMaSoCoSoMeV2.pos.bw
-    type bigWig
-    color 0,100,0
-    parent kbp550.CLIP1
-
-    track kbp550.CLIP1.fqTrTrU-SoMaSoCoSoMeV2.neg.bw
-    bigDataUrl http://alaindomissy.github.io//kbp550_CLIP1_hub/hg19/kbp550.CLIP1.---.r-.fqTrTrU-SoMaSoCoSoMeV2.neg.bw
-    shortLabel kbp550.CLIP1.fqTrTrU-SoMaSoCoSoMeV2.neg.bw
-    longLabel kbp550.CLIP1.fqTrTrU-SoMaSoCoSoMeV2.neg.bw
-    type bigWig
-    color 100,0,0
-    parent kbp550.CLIP1
-
 track kbp550.CLIP1.bb
 bigDataUrl http://alaindomissy.github.io//kbp550_CLIP1_hub/hg19/kbp550.CLIP1.---.r-.fqTrTrU-SoMaSoCoSoMeV2ClFiSo.bb
 shortLabel kbp550.CLIP1.bb
@@ -48,6 +21,7 @@ alwaysZero on
 autoScale on
 aggregate transparentOverlay
 showSubtrackColorOnUi on
+parent kbp550_CLIP1_hub
 container multiWig
 
     track kbp550.CLIP1.fqTrTrU-SoMaSoCoSoMeV2.pos.bw
