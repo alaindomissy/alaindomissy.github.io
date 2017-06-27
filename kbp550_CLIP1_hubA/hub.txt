@@ -1,0 +1,5 @@
+hub kbp550_CLIP1_hubA
+shortLabel kbp550_CLIP1_hubA
+longLabel kbp550_CLIP1_hubA
+genomesFile kbp550_CLIP1_hubA.genomes.txt
+email adomissy@ucsd.edu
