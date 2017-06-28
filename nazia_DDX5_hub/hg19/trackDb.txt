@@ -1,0 +1,124 @@
+track nazia_DDX5_hub
+shortLabel nazia_DDX5_hub
+longLabel nazia_DDX5_hub
+superTrack on
+
+track DDX5.INP1
+shortLabel DDX5.INP1
+longLabel DDX5.INP1
+type bigWig
+visibility full
+alwaysZero on
+autoScale on
+aggregate transparentOverlay
+showSubtrackColorOnUi on
+parent nazia_DDX5_hub
+container multiWig
+
+    track DDX5.INP1.r-.fqTrTrU-SoMaSoCoSoV2.negbw
+    bigDataUrl http://alaindomissy.github.io/mytrackhubs/nazia_DDX5_hub/hg19/DDX5.INP1.NIL.r-.fqTrTrU-SoMaSoCoSoV2.negbw
+    shortLabel DDX5.INP1.r-.fqTrTrU-SoMaSoCoSoV2.negbw
+    longLabel DDX5.INP1.r-.fqTrTrU-SoMaSoCoSoV2.negbw
+    type bigWig
+    color 100,0,0
+    parent DDX5.INP1
+
+    track DDX5.INP1.r-.fqTrTrU-SoMaSoCoSoV2.posbw
+    bigDataUrl http://alaindomissy.github.io/mytrackhubs/nazia_DDX5_hub/hg19/DDX5.INP1.NIL.r-.fqTrTrU-SoMaSoCoSoV2.posbw
+    shortLabel DDX5.INP1.r-.fqTrTrU-SoMaSoCoSoV2.posbw
+    longLabel DDX5.INP1.r-.fqTrTrU-SoMaSoCoSoV2.posbw
+    type bigWig
+    color 0,100,0
+    parent DDX5.INP1
+
+track DDX5.INP2
+shortLabel DDX5.INP2
+longLabel DDX5.INP2
+type bigWig
+visibility full
+alwaysZero on
+autoScale on
+aggregate transparentOverlay
+showSubtrackColorOnUi on
+parent nazia_DDX5_hub
+container multiWig
+
+    track DDX5.INP2.r-.fqTrTrU-SoMaSoCoSoV2.negbw
+    bigDataUrl http://alaindomissy.github.io/mytrackhubs/nazia_DDX5_hub/hg19/DDX5.INP2.NIL.r-.fqTrTrU-SoMaSoCoSoV2.negbw
+    shortLabel DDX5.INP2.r-.fqTrTrU-SoMaSoCoSoV2.negbw
+    longLabel DDX5.INP2.r-.fqTrTrU-SoMaSoCoSoV2.negbw
+    type bigWig
+    color 100,0,0
+    parent DDX5.INP2
+
+    track DDX5.INP2.r-.fqTrTrU-SoMaSoCoSoV2.posbw
+    bigDataUrl http://alaindomissy.github.io/mytrackhubs/nazia_DDX5_hub/hg19/DDX5.INP2.NIL.r-.fqTrTrU-SoMaSoCoSoV2.posbw
+    shortLabel DDX5.INP2.r-.fqTrTrU-SoMaSoCoSoV2.posbw
+    longLabel DDX5.INP2.r-.fqTrTrU-SoMaSoCoSoV2.posbw
+    type bigWig
+    color 0,100,0
+    parent DDX5.INP2
+
+track DDX5.REP2
+shortLabel DDX5.REP2
+longLabel DDX5.REP2
+type bigWig
+visibility full
+alwaysZero on
+autoScale on
+aggregate transparentOverlay
+showSubtrackColorOnUi on
+parent nazia_DDX5_hub
+container multiWig
+
+    track DDX5.REP2.r-.fqTrTrU-SoMaSoCoSoMeV2.negbw
+    bigDataUrl http://alaindomissy.github.io/mytrackhubs/nazia_DDX5_hub/hg19/DDX5.REP2.---.r-.fqTrTrU-SoMaSoCoSoMeV2.negbw
+    shortLabel DDX5.REP2.r-.fqTrTrU-SoMaSoCoSoMeV2.negbw
+    longLabel DDX5.REP2.r-.fqTrTrU-SoMaSoCoSoMeV2.negbw
+    type bigWig
+    color 100,0,0
+    parent DDX5.REP2
+
+    track DDX5.REP2.r-.fqTrTrU-SoMaSoCoSoMeV2.posbw
+    bigDataUrl http://alaindomissy.github.io/mytrackhubs/nazia_DDX5_hub/hg19/DDX5.REP2.---.r-.fqTrTrU-SoMaSoCoSoMeV2.posbw
+    shortLabel DDX5.REP2.r-.fqTrTrU-SoMaSoCoSoMeV2.posbw
+    longLabel DDX5.REP2.r-.fqTrTrU-SoMaSoCoSoMeV2.posbw
+    type bigWig
+    color 0,100,0
+    parent DDX5.REP2
+
+track DDX5.INP1.bb
+bigDataUrl http://alaindomissy.github.io/mytrackhubs/nazia_DDX5_hub/hg19/DDX5.INP1.NIL.r-.fqTrTrU-SoMaSoCoSoV2ClFiSo.bigbed
+shortLabel DDX5.INP1.bb
+longLabel DDX5.INP1.bb
+type bigBed
+visibility full
+color 100,0,0
+parent nazia_DDX5_hub
+
+track DDX5.INP2.bb
+bigDataUrl http://alaindomissy.github.io/mytrackhubs/nazia_DDX5_hub/hg19/DDX5.INP2.NIL.r-.fqTrTrU-SoMaSoCoSoV2ClFiSo.bigbed
+shortLabel DDX5.INP2.bb
+longLabel DDX5.INP2.bb
+type bigBed
+visibility full
+color 100,0,0
+parent nazia_DDX5_hub
+
+track DDX5.REP1.bb
+bigDataUrl http://alaindomissy.github.io/mytrackhubs/nazia_DDX5_hub/hg19/DDX5.REP1.---.r-.fqTrTrU-SoMaSoCoSoMeV2ClFiSo.bigbed
+shortLabel DDX5.REP1.bb
+longLabel DDX5.REP1.bb
+type bigBed
+visibility full
+color 100,0,0
+parent nazia_DDX5_hub
+
+track DDX5.REP2.bb
+bigDataUrl http://alaindomissy.github.io/mytrackhubs/nazia_DDX5_hub/hg19/DDX5.REP2.---.r-.fqTrTrU-SoMaSoCoSoMeV2ClFiSo.bigbed
+shortLabel DDX5.REP2.bb
+longLabel DDX5.REP2.bb
+type bigBed
+visibility full
+color 100,0,0
+parent nazia_DDX5_hub

@@ -1,0 +1,5 @@
+hub nazia_DDX5_hub
+shortLabel nazia_DDX5_hub
+longLabel nazia_DDX5_hub
+genomesFile nazia_DDX5_hub.genomes.txt
+email adomissy@ucsd.edu
