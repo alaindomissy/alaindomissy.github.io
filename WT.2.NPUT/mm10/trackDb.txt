@@ -1,0 +1,41 @@
+track WT.2.NPUT
+shortLabel WT.2.NPUT
+longLabel WT.2.NPUT
+superTrack on
+
+track THOC6.WT
+shortLabel THOC6.WT
+longLabel THOC6.WT
+type bigWig
+visibility full
+alwaysZero on
+autoScale on
+aggregate transparentOverlay
+showSubtrackColorOnUi on
+parent WT.2.NPUT
+container multiWig
+
+    track THOC6.WT.fqTrTrU-SoMaSoCoSoV2.pos.bw
+    bigDataUrl http://alaindomissy.github.io//WT.2.NPUT/mm10/THOC6.WT.2.NPUT.NIL.r-.fqTrTrU-SoMaSoCoSoV2.pos.bw
+    shortLabel THOC6.WT.fqTrTrU-SoMaSoCoSoV2.pos.bw
+    longLabel THOC6.WT.fqTrTrU-SoMaSoCoSoV2.pos.bw
+    type bigWig
+    color 0,100,0
+    parent THOC6.WT
+
+    track THOC6.WT.fqTrTrU-SoMaSoCoSoV2.neg.bw
+    bigDataUrl http://alaindomissy.github.io//WT.2.NPUT/mm10/THOC6.WT.2.NPUT.NIL.r-.fqTrTrU-SoMaSoCoSoV2.neg.bw
+    shortLabel THOC6.WT.fqTrTrU-SoMaSoCoSoV2.neg.bw
+    longLabel THOC6.WT.fqTrTrU-SoMaSoCoSoV2.neg.bw
+    type bigWig
+    color 100,0,0
+    parent THOC6.WT
+
+track THOC6.WT.bb
+bigDataUrl http://alaindomissy.github.io//WT.2.NPUT/mm10/THOC6.WT.2.NPUT.NIL.r-.fqTrTrU-SoMaSoCoSoV2ClFiSo.bb
+shortLabel THOC6.WT.bb
+longLabel THOC6.WT.bb
+type bigBed
+visibility full
+color 100,0,0
+parent WT.2.NPUT

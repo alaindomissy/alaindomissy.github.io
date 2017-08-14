@@ -1,0 +1,5 @@
+hub WT.1.NPUT
+shortLabel WT.1.NPUT
+longLabel WT.1.NPUT
+genomesFile WT.1.NPUT.genomes.txt
+email adomissy@ucsd.edu

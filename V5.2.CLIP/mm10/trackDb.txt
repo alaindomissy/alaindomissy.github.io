@@ -1,0 +1,41 @@
+track V5.2.CLIP
+shortLabel V5.2.CLIP
+longLabel V5.2.CLIP
+superTrack on
+
+track THOC6.V5
+shortLabel THOC6.V5
+longLabel THOC6.V5
+type bigWig
+visibility full
+alwaysZero on
+autoScale on
+aggregate transparentOverlay
+showSubtrackColorOnUi on
+parent V5.2.CLIP
+container multiWig
+
+    track THOC6.V5.fqTrTrU-SoMaSoCoSoMeV2.pos.bw
+    bigDataUrl http://alaindomissy.github.io//V5.2.CLIP/mm10/THOC6.V5.2.CLIP.X2-.r-.fqTrTrU-SoMaSoCoSoMeV2.pos.bw
+    shortLabel THOC6.V5.fqTrTrU-SoMaSoCoSoMeV2.pos.bw
+    longLabel THOC6.V5.fqTrTrU-SoMaSoCoSoMeV2.pos.bw
+    type bigWig
+    color 0,100,0
+    parent THOC6.V5
+
+    track THOC6.V5.fqTrTrU-SoMaSoCoSoMeV2.neg.bw
+    bigDataUrl http://alaindomissy.github.io//V5.2.CLIP/mm10/THOC6.V5.2.CLIP.X2-.r-.fqTrTrU-SoMaSoCoSoMeV2.neg.bw
+    shortLabel THOC6.V5.fqTrTrU-SoMaSoCoSoMeV2.neg.bw
+    longLabel THOC6.V5.fqTrTrU-SoMaSoCoSoMeV2.neg.bw
+    type bigWig
+    color 100,0,0
+    parent THOC6.V5
+
+track THOC6.V5.bb
+bigDataUrl http://alaindomissy.github.io//V5.2.CLIP/mm10/THOC6.V5.2.CLIP.X2-.r-.fqTrTrU-SoMaSoCoSoMeV2ClFiSo.bb
+shortLabel THOC6.V5.bb
+longLabel THOC6.V5.bb
+type bigBed
+visibility full
+color 100,0,0
+parent V5.2.CLIP

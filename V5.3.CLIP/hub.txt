@@ -1,0 +1,5 @@
+hub V5.3.CLIP
+shortLabel V5.3.CLIP
+longLabel V5.3.CLIP
+genomesFile V5.3.CLIP.genomes.txt
+email adomissy@ucsd.edu

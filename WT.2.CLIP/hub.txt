@@ -1,0 +1,5 @@
+hub WT.2.CLIP
+shortLabel WT.2.CLIP
+longLabel WT.2.CLIP
+genomesFile WT.2.CLIP.genomes.txt
+email adomissy@ucsd.edu

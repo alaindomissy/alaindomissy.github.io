@@ -1,0 +1,5 @@
+hub V5.1.NPUT
+shortLabel V5.1.NPUT
+longLabel V5.1.NPUT
+genomesFile V5.1.NPUT.genomes.txt
+email adomissy@ucsd.edu
