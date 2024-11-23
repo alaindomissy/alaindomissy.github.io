@@ -1,1 +1,1224 @@
 
+
+<!DOCTYPE html>
+
+<html lang="en" style="height: 100%;">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Apex Real Estate Bus Tour</title>
+<style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f4eb;
+            color: #333;
+        }
+        header {
+            position: relative;
+            width: 100%;
+            height: 300px; /* Adjusted height for full bus visibility */
+            border-bottom: 8px solid #cf1e25; /* Thick red border */
+            overflow: hidden;
+        }
+        .title-picture {
+            width: 100%;
+            object-fit: cover;
+            object-position: center 50%; /* Cropping to show the top of the bus */
+            height: 100%;
+        }
+        .apex-logo {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            max-width: 120px; /* Adjusted size for Apex logo */
+            z-index: 10;
+        }
+        .event-info {
+            position: absolute;
+            bottom: 0;
+            width: 100%; /* Stretch background across entire width */
+            color: white;
+            font-size: 1.2em;
+            font-weight: normal;
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 10px;
+            text-align: center;
+            line-height: 1.5;
+        }
+        .menu {
+            text-align: center;
+            font-size: 0.8em;
+            background-color: #fff;
+            padding: 5px 0;
+            border-bottom: 1px solid #ccc;
+        }
+        .menu a {
+    color: #0073e6; /* Match light blue color for consistency */
+    color: #0073e6; /* Light blue color for menu links */
+            text-decoration: none;
+            color: #333;
+            margin: 0 10px;
+        }
+        .menu a:hover {
+            text-decoration: underline;
+        }
+        section {
+            padding: 20px;
+        }
+        .itinerary-table {
+            width: 100%;
+            margin: 20px 0;
+            border-collapse: collapse;
+        }
+        .itinerary-table th, .itinerary-table td {
+            border: 0px;
+            padding: 10px;
+            text-align: left;
+        }
+        .itinerary-table th {
+            background-color: #f4f4f4;
+        }
+        .map-image {
+            display: block;
+            margin: 20px auto;
+            max-width: 100%;
+            height: auto;
+        }
+        .property-thumbnail {
+            width: 50%; /* Uniform width for all property images */
+            max-height: 300px; /* Maintain consistent aspect ratio */
+            object-fit: cover;
+        }
+        .property-box {
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            padding: 15px;
+            margin-bottom: 20px;
+            background-color: #f9f9f9;
+        }
+        .property-box h3 {
+            margin-top: 0;
+        }
+        .property-notes {
+            margin-top: 20px;
+        }
+        .notes-box {
+            width: 100%;
+            height: 100px;
+            border: 0px;
+            background-color: #f9f9f9;
+            position: relative;
+        }
+        .notes-placeholder {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-style: italic;
+            color: #d3d3d3;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        td {
+            padding: 10px;
+            vertical-align: top;
+            border-left: 1px solid transparent;
+        }
+        .property-info a img {
+            max-height: 1em; /* Limit the height to match a single line of text */
+            width: auto; /* Maintain aspect ratio */
+            vertical-align: middle; /* Align with text */
+            display: inline-block; /* Prevent unintended scaling */
+        }
+        footer {
+            background-color: #333;
+            color: #ccc;
+            text-align: center;
+            padding: 10px 5px;
+            font-size: 0.9em;
+        }
+        footer a {
+            color: #f8c471;
+            text-decoration: none;
+        }
+    
+a {
+    color: #0073e6; /* Light blue color for all links */
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+</style>
+<style>
+@media print {
+    body {
+        margin: 0;
+        padding: 0;
+        width: 8.5in;
+        height: 11in;
+        overflow: visible;
+    }
+
+    header, footer, .menu {
+        display: none; /* Hide elements unnecessary for printing */
+    }
+
+    section {
+        margin: 0.5in;
+        padding: 0;
+        page-break-before: auto;
+        page-break-after: always;
+    }
+
+    .property-box, .participant-roster {
+        page-break-inside: avoid; /* Prevent breaking inside elements */
+    }
+}
+
+.print-view body {
+    margin: 0;
+    padding: 0;
+    width: 8.5in;
+}
+
+.print-view section {
+    margin: 0.5in;
+    padding: 0;
+}
+
+    @media print {
+        header {
+            display: block !important; /* Ensure the header is visible in print */
+        }
+        header img {
+            display: block !important; /* Force the image to be visible */
+            max-width: 100%;
+            height: auto;
+            margin: 0 auto;
+        }
+    }
+    
+    @media print {
+        header {
+            display: block !important; /* Ensure the header is always visible */
+            background: none !important; /* Remove any conflicting background settings */
+        }
+        header img {
+            display: block !important; /* Force the image to be visible */
+            max-width: 100%;
+            height: auto;
+            margin: 0 auto;
+            visibility: visible !important; /* Ensure visibility */
+        }
+    }
+    
+        @media print {
+            header {
+                background: none !important; /* Remove background for print */
+            }
+            header img {
+                display: block !important; /* Show the <img> tag for print */
+            }
+        }
+        
+    @media print {
+        header {
+            background: none !important; /* Remove background for print */
+        }
+        header img.banner-image {
+            display: block !important; /* Force visibility for print */
+            max-width: 100%;
+            height: auto;
+            margin: 0 auto;
+            visibility: visible !important;
+        }
+    }
+    
+    @media print {
+        header {
+            display: none !important; /* Hide the header for print */
+        }
+        div[style*='display: none'] {
+            display: block !important; /* Show the dedicated print container */
+        }
+        img {
+            display: block !important; /* Ensure all images are visible */
+        }
+    }
+    
+    @media print {
+        div[style*='display: none'] img {
+            max-width: 60% !important; /* Reduce size to 60% */
+            margin: 0 auto !important; /* Center the image horizontally */
+        }
+    }
+    </style>
+<style>
+@media print {
+    .page-break {
+        page-break-before: always;
+    }
+
+    footer {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background-color: #333;
+        color: #ccc;
+        padding: 10px;
+        text-align: center;
+    }
+
+    body {
+        margin-bottom: 60px; /* Ensure content doesn't overlap the footer */
+    }
+}
+</style>
+<style>
+@media print {
+    .page-break {
+        page-break-before: always; /* Force new page */
+    }
+}
+</style>
+<style>
+<style>
+.page-break::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: red;
+    margin: 20px 0; /* Add some spacing for visibility */
+}
+
+@media print {
+    .page-break::after {
+        display: none; /* Hide the line in the print view */
+    }
+}
+</style>
+<style>
+.page-break::after {
+    content: "";
+    display: none; /* Default: no line visible */
+    width: 100%;
+    height: 2px;
+    background: red;
+    margin: 20px 0;
+}
+
+body.print-view .page-break::after {
+    display: block; /* Show line only when print-view class is enabled */
+}
+</style>
+<style>
+@media print, body.print-view {
+    .print-footer {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background-color: #333;
+        color: #ccc;
+        text-align: center;
+        padding: 10px;
+        font-size: 0.8em;
+        display: block;
+    }
+
+    body.print-view {
+        margin-bottom: 60px; /* Ensure no content overlaps the footer */
+    }
+}
+
+body:not(.print-view) .print-footer {
+    display: none; /* Hide the footer in non-print view when print-preview is disabled */
+}
+</style>
+<style>
+@media print {
+    #overview, #map {
+        margin-bottom: 0;
+        page-break-after: auto; /* Ensure no forced page break */
+    }
+}
+</style>
+<style>
+.notes-box {
+    height: 200px; /* Make note boxes shorter */
+    background-color: #f9f9f9; /* Retain background color */
+    padding: 10px;
+    border: none; /* Remove the border */
+}
+</style>
+<style>
+@media print {
+    header, .menu {
+        display: none;
+    }
+
+    body.print-view header, 
+    body.print-view .menu {
+        display: block;
+    }
+
+    @page:first {
+        header {
+            display: block;
+        }
+
+        .menu {
+            display: block;
+        }
+    }
+}
+</style>
+<style>
+@media print {
+    header {
+        display: block; /* Ensure header is visible */
+    }
+
+    .banner-image {
+        display: block;
+        max-width: 100%;
+        height: auto;
+        margin: 0 auto;
+    }
+
+    @page:first {
+        header .banner-image {
+            display: block; /* Show the banner image on the first page */
+        }
+    }
+}
+</style>
+<style>
+@media print {
+    header {
+        display: block; /* Ensure the header is visible */
+    }
+
+    .banner-image {
+        display: block;
+        max-width: 100%;
+        height: auto;
+        margin: 0 auto;
+    }
+
+    @page:first {
+        header {
+            display: block; /* Ensure header is visible on the first page */
+        }
+
+        header .banner-image {
+            display: block; /* Ensure the banner image is visible */
+        }
+    }
+}
+</style>
+<style>
+@media print {
+    header {
+        display: block; /* Ensure header is always visible */
+    }
+
+    header .banner-image {
+        display: block;
+        max-width: 100%;
+        height: auto;
+        margin: 0 auto;
+    }
+
+    @page:first {
+        header {
+            display: block;
+        }
+
+        header .banner-image {
+            display: block; /* Ensure visibility on the first page */
+        }
+    }
+}
+</style>
+<style>
+@media print {
+    header {
+        display: block; /* Ensure header is visible */
+    }
+
+    header .banner-image {
+        display: block;
+        max-width: 100%;
+        height: auto;
+        margin: 0 auto;
+    }
+
+    @page:first {
+        header {
+            display: block;
+        }
+
+        header .banner-image {
+            display: block;
+        }
+    }
+}
+</style>
+<style>
+@media print {
+    header {
+        display: block; /* Ensure the header is visible */
+    }
+
+    header img[src="images/apex_bus_tour_banner.jpeg"] {
+        display: block !important; /* Force visibility */
+        max-width: 100%;
+        height: auto;
+        margin: 0 auto;
+    }
+
+    @page:first {
+        header {
+            display: block;
+        }
+
+        header img[src="images/apex_bus_tour_banner.jpeg"] {
+            display: block !important; /* Force visibility on the first page */
+        }
+    }
+}
+
+    #roster table {
+        font-size: 0.8em !important; /* Ensure reduced font size for the table */
+    }
+    #roster table th, #roster table td {
+        padding: 5px !important; /* Ensure reduced padding */
+    }
+    
+    @media print {
+        #itinerary-stop-0-wrapper {
+            page-break-inside: avoid !important;
+            page-break-before: avoid !important;
+            page-break-after: avoid !important;
+        }
+        #itinerary-stop-0-wrapper * {
+            page-break-inside: avoid !important;
+        }
+    }
+    
+    @media print {
+        #combined-itinerary-stop-0 {
+            display: block;
+            page-break-inside: avoid !important;
+            page-break-before: avoid !important;
+            page-break-after: avoid !important;
+        }
+    }
+    
+    @media print {
+        #itinerary, .property-box {
+            page-break-inside: avoid !important;
+            page-break-before: avoid !important;
+            page-break-after: avoid !important;
+        }
+    }
+    
+    .property-box h3 {
+        margin-bottom: 5px; /* Reduce gap between title and address line */
+    }
+    .property-box p:first-of-type {
+        margin-top: 0; /* Reduce gap between address line and picture */
+        margin-bottom: 5px;
+    }
+    .property-box {
+        margin-bottom: 10px; /* Reduce gap between successive stop detail boxes */
+    }
+    @media print {
+        .property-box {
+            max-height: 30%; /* Ensure compact height to fit three per page */
+            page-break-inside: avoid; /* Prevent splitting boxes */
+        }
+        body {
+            font-size: 0.9em; /* Reduce font size globally for print */
+        }
+    }
+    
+    @media print {
+        #itinerary {
+            page-break-before: always;
+        }
+        #properties {
+            page-break-before: always;
+        }
+        h3:contains('Stop 4') {
+            page-break-before: always;
+        }
+        h3:contains('Stop 7') {
+            page-break-before: always;
+        }
+        h3:contains('Stop 10') {
+            page-break-before: always;
+        }
+    }
+    
+    @media print {
+        #itinerary {
+            page-break-before: always !important; /* Break before Itinerary section */
+        }
+        #properties {
+            page-break-before: always !important; /* Break before Property Details section */
+        }
+        div.property-box h3:contains('Stop 4') {
+            page-break-before: always !important; /* Break before Stop 4 */
+        }
+        div.property-box h3:contains('Stop 7') {
+            page-break-before: always !important; /* Break before Stop 7 */
+        }
+        div.property-box h3:contains('Stop 10') {
+            page-break-before: always !important; /* Break before Stop 10 */
+        }
+    }
+    
+        @media print {
+            div.property-box h3:contains('Stop 4') {
+                page-break-before: always !important; /* Force page break before Stop 4 */
+            }
+        }
+        
+        @media print {
+            div.property-box h3:contains('Stop 7') {
+                page-break-before: always !important; /* Force page break before Stop 7 */
+            }
+        }
+        
+        @media print {
+            div.property-box h3:contains('Stop 10') {
+                page-break-before: always !important; /* Force page break before Stop 10 */
+            }
+        }
+        
+    @media print {
+        body {
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+        footer {
+            page-break-after: avoid !important;
+        }
+        #roster {
+            margin-bottom: 0 !important;
+        }
+    }
+    
+    @media print {
+        body {
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+        #roster, footer {
+            page-break-after: avoid !important;
+            margin-bottom: 0 !important;
+        }
+    }
+    
+    @page {
+        size: auto;
+        margin: 10mm;
+    }
+    @media print {
+        body {
+            margin: 0;
+        }
+        footer::after {
+            content: "Page " counter(page) " of " counter(pages);
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            text-align: center;
+            font-size: 12px;
+            color: #555;
+            margin-bottom: 10px;
+        }
+    }
+    
+    @page {
+        margin: 20mm;
+    }
+    @media print {
+        footer::after {
+            content: "Page " counter(page) " of " counter(pages);
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            text-align: center;
+            font-size: 12px;
+            color: #555;
+        }
+    }
+    
+    @page {
+        size: letter; /* Set the page size to US Letter */
+        margin: 0.5in; /* Reduce margins to maximize content width */
+    }
+    @media print {
+        body {
+            width: 100%; /* Ensure content spans the full width of the page */
+            margin: 0;
+            padding: 0;
+        }
+        table {
+            width: 100%; /* Ensure tables use the full width */
+        }
+    }
+    
+    @page {
+        size: letter; /* Ensure US Letter size */
+        margin: 0.4in; /* Slightly reduce margins to fit more content */
+    }
+    @media print {
+        body {
+            width: 100%; /* Maintain full width for content */
+            margin: 0;
+            padding: 0;
+        }
+        table {
+            width: 100%; /* Ensure tables use full width */
+        }
+    }
+    
+    @page {
+        size: letter; /* US Letter size */
+        margin: 0.6in; /* Slightly increase margins to balance layout */
+    }
+    @media print {
+        body {
+            width: auto; /* Allow some flexibility in width */
+            margin: 0;
+            padding: 0;
+        }
+        table {
+            width: 95%; /* Slightly reduce table width to avoid overflow */
+            margin: 0 auto; /* Center tables within the page */
+        }
+    }
+    
+    @page {
+        size: letter; /* US Letter size */
+        margin: 0.3in; /* Reduce margins to fit more content */
+    }
+    @media print {
+        body {
+            width: 95%; /* Slightly reduce width */
+            margin: 0;
+            padding: 0;
+        }
+        table {
+            width: 95%; /* Ensure tables fit comfortably */
+            margin: 0 auto; /* Center tables */
+        }
+    }
+    
+    @page {
+        size: letter; /* US Letter size */
+        margin: 0.25in; /* Further reduce margins to fit content */
+    }
+    @media print {
+        body {
+            width: 94%; /* Adjust width slightly */
+            margin: 0;
+            padding: 0;
+        }
+        table {
+            width: 94%; /* Ensure tables align well */
+            margin: 0 auto; /* Center tables */
+        }
+    }
+    </style>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const pages = document.querySelectorAll("footer");
+    const totalPages = pages.length;
+    pages.forEach((footer, index) => {
+        const pageNumber = index + 1;
+        footer.textContent = `Page ${pageNumber} of ${totalPages}`;
+    });
+});
+</script><style type="text/css">
+            @media print {
+                input[type="radio"] {
+                    display: none;
+                }
+
+                @page:first {
+                    input[type="radio"] {
+                        display: inline-block;
+                    }
+                }
+            }
+        
+            @media print {
+                body {
+                    margin: 0;
+                    padding: 0;
+                    overflow: hidden;
+                }
+                #footer, #extra-spacing {
+                    display: none !important;
+                }
+                * {
+                    margin: 0;
+                    padding: 0;
+                }
+            }
+        
+            @media print {
+                html, body {
+                    margin: 0;
+                    padding: 0;
+                    height: auto;
+                }
+                body::after {
+                    content: none;
+                }
+                * {
+                    page-break-after: avoid;
+                    page-break-before: avoid;
+                    page-break-inside: avoid;
+                }
+                #footer, .page-break, .extra-spacing {
+                    display: none !important;
+                }
+            }
+        </style></head>
+<body style="margin: 0; padding: 0; height: 100%;">
+<div style="position: fixed; top: 10px; right: 10px; z-index: 1000;">
+<label><input checked="" name="view-mode" type="radio" value="web"/> Web View</label>
+<label><input name="view-mode" type="radio" value="print"/> Print View</label>
+</div>
+<script>
+document.querySelectorAll('input[name="view-mode"]').forEach(radio => {
+    radio.addEventListener('change', function() {
+        if (this.value === 'print') {
+            document.body.classList.add('print-view');
+        } else {
+            document.body.classList.remove('print-view');
+        }
+    });
+});
+</script>
+<header style="position: relative; width: 100%; height: 300px; border-bottom: 8px solid #cf1e25; overflow: hidden; background-image: url('images/apex_bus_tour_banner.jpeg'); background-size: cover; background-position: center center;"><img class="banner-image" src="path/to/banner-image.jpg" style="display: block; max-width: 100%; height: auto; margin: 0 auto; visibility: visible !important;"/>
+<img alt="Apex Logo" class="apex-logo" src="images/apex_logo_transparent.png" style="position: absolute; top: 46%; left: 41%; transform: translate(-50%, -50%) rotate(4deg); max-width: 120px; z-index: 10; opacity: 0.5;"/>
+<div class="event-info">
+            Puerto Rico Metro, Saturday, November 23rd, 2024
+        </div>
+<img alt="Real Estate Investors" src="images/RealEstateInvestors.png" style="position: absolute; top: 41%; left: 68%; transform: translate(-50%, -50%) rotate(19deg); max-width: 180px; z-index: 10; rotate(19deg);"/></header><div style="display: none; text-align: center;"><img alt="Apex Bus Tour Banner" src="images/apex_bus_tour_banner.jpeg" style="max-width: 100%; height: auto; visibility: visible !important; margin: 0 auto;"/></div>
+<div class="menu">
+<a href="#overview">Overview</a>
+<a href="#map">Map</a>
+<a href="#itinerary">Itinerary</a>
+<a href="#properties">Property Details</a>
+<a href="#roster">Participant Roster</a>
+</div>
+<div style="page-break-inside: avoid; page-break-before: avoid; page-break-after: avoid;"><section id="overview">
+<h2 style="display: flex; align-items: center;">Event Overview 
+
+    
+        <path d="M12 8l6 6H6z"></path>
+</h2>
+<path d="M12 8l6 6H6z"></path>
+<path d="M12 8l6 6H6z"></path>
+Join us for an exciting real estate bus tour organized by <a href="https://www.skool.com/the-apex-real-estate-pros-8347" style="">Apex</a>! Starting at 9 AM on Saturday, November 23rd, from a coffee shop in San Juan, we'll explore 9 key properties in the metropolitan area. Learn, network, and have fun!
+</section><section class="" id="map">
+<h2 style="display: flex; align-items: center;">Tour Itinerary Map 
+
+    
+        <path d="M12 8l6 6H6z"></path>
+</h2>
+<path d="M12 8l6 6H6z"></path>
+<path d="M12 8l6 6H6z"></path>
+<div class="map-container" style="position: relative; width: 100%; height: auto;"><img alt="Tour Itinerary Map" class="map-image" src="images/tour_itinerary_map.png" style="width: 100%; height: auto;"/><div class="stop-number" style="position: absolute; top: 10%; left: 20%; font-size: 2em; color: red; font-weight: bold;">0</div><div class="stop-number" style="position: absolute; top: 10%; left: 17%; font-size: 2em; color: red; font-weight: bold;">1</div><div class="stop-number" style="position: absolute; top: 3%; left: 10%; font-size: 2em; color: red; font-weight: bold;">2</div><div class="stop-number" style="position: absolute; top: 0%; left: 5%; font-size: 2em; color: red; font-weight: bold;">3</div><div class="stop-number" style="position: absolute; top: 25%; left: 25%; font-size: 2em; color: red; font-weight: bold;">4</div><div class="stop-number" style="position: absolute; top: 95%; left: 12%; font-size: 2em; color: red; font-weight: bold;">5</div><div class="stop-number" style="position: absolute; top: 70%; left: 30%; font-size: 2em; color: red; font-weight: bold;">6</div><div class="stop-number" style="position: absolute; top: 65%; left: 30%; font-size: 2em; color: red; font-weight: bold;">7</div><div class="stop-number" style="position: absolute; top: 60%; left: 28%; font-size: 2em; color: red; font-weight: bold;">8</div><div class="stop-number" style="position: absolute; top: 70%; left: 90%; font-size: 2em; color: red; font-weight: bold;">9</div><div class="stop-number" style="position: absolute; top: 17%; left: 22%; font-size: 2em; color: red; font-weight: bold;">10</div></div></section></div>
+<div style="page-break-inside: avoid;"><div id="itinerary-stop-0-wrapper" style="page-break-inside: avoid;"><div id="combined-itinerary-stop-0" style="page-break-inside: avoid; page-break-before: avoid; page-break-after: avoid;"><div style="page-break-inside: avoid; page-break-before: avoid; page-break-after: avoid;"><section class="" id="itinerary">
+<h2 style="display: flex; align-items: center;">Itinerary 
+
+    
+        <path d="M12 8l6 6H6z"></path>
+</h2>
+<path d="M12 8l6 6H6z"></path>
+<path d="M12 8l6 6H6z"></path>
+<table class="itinerary-table"><colgroup><col style="width: 15%;"/><col style="width: auto;"/><col style="width: 35%;"/><col style="width: 40%;"/></colgroup>
+<thead style="background-color: #e0f7fa;">
+<tr>
+<th>Time</th>
+<th>Stop</th>
+<th>Name</th>
+<th>Address</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>9:00 AM</td>
+<td><a href="#properties">Stop 0</a></td>
+<td>The Bookmark Coffee and Book Store (Start)</td>
+<td>1509 Av. Juan Ponce de León, San Juan, 00909</td>
+</tr>
+<tr>
+<td>9:30 AM</td>
+<td><a href="#properties">Stop 1</a></td>
+<td>Office Conversion HOA Play</td>
+<td>609 C. Condado, San Juan, 00907</td>
+</tr>
+<tr>
+<td>10:00 AM</td>
+<td><a href="#properties">Stop 2</a></td>
+<td>Act60 Tourism Bed &amp; Breakfast</td>
+<td>610 C. Hoare, San Juan, 00907</td>
+</tr>
+<tr>
+<td>10:30 AM</td>
+<td><a href="#properties">Stop 3</a></td>
+<td>Marc Weisi's Act 60 Tourism Guest House</td>
+<td>661 Monserrate St, San Juan, 00907</td>
+</tr>
+<tr>
+<td>11:00 AM</td>
+<td><a href="#properties">Stop 4</a></td>
+<td>Juan Carlo's Guest House</td>
+<td>1657 Av. Manuel Fernández Juncos, San Juan, 00909</td>
+</tr>
+<tr>
+<td>12:00 PM</td>
+<td><a href="#properties">Stop 5</a></td>
+<td>McMansion Flip</td>
+<td>E15 Clle San Isaac, San Juan, 00927</td>
+</tr>
+<tr>
+<td>12:30 PM</td>
+<td><a href="#properties">Stop 6</a></td>
+<td>Twelve-unit rented &amp; Four-unit flip</td>
+<td>1002 C. Madrid, San Juan, 00925</td>
+</tr>
+<tr>
+<td>1:00 PM</td>
+<td><a href="#properties">Stop 7</a></td>
+<td>Two-building flip with Act 182 potential</td>
+<td>54 C. Añasco, San Juan, 00927</td>
+</tr>
+<tr>
+<td>1:30 PM</td>
+<td><a href="#properties">Stop 8</a></td>
+<td>El Hipopótamo (Lunch)</td>
+<td>880 PR-1, San Juan, 00927</td>
+</tr>
+<tr>
+<td>3:00 PM</td>
+<td><a href="#properties">Stop 9</a></td>
+<td>FFF Fast Foreclosure Flip</td>
+<td>1756 Cll San Alejandro, San Juan, 00927</td>
+</tr>
+<tr>
+<td>4:00 PM</td>
+<td><a href="#properties">Stop 10</a></td>
+<td>The Looking Glass Hotel (Finish)</td>
+<td>1661 Av. Juan Ponce de León, San Juan, 00909</td>
+</tr>
+</tbody>
+</table>
+</section><div class="property-box">
+<h3>Stop 0 - The Bookmark Coffee and Book Store (Start)</h3>
+<p>Address: 1509 Av. Juan Ponce de León Suite 2, San Juan, 00909 
+            <a href="https://maps.google.com/?q=1509+Av.+Juan+Ponce+de+León+Suite+2,+San+Juan,+00909">
+<img alt="Google Maps" src="images/map_icon.png" style="max-height: 1em; vertical-align: middle;"/>
+</a>
+</p>
+<div style="display: flex; flex-direction: row; align-items: flex-start;">
+<img alt="Stop 0 Image" class="property-thumbnail" src="images/stop00.jpg" style="width: 50%; max-height: 300px;"/>
+<div style="width: 50%; padding-left: 10px;">
+<p style="color: lightgrey; font-style: italic; text-align: center; margin: 0; display: flex; align-items: center; justify-content: center; height: 100%;">My Notes</p></div>
+</div>
+<p style="margin-top: 10px;">Bookmark coffee and book store. Robert's favorite coffee ☕️. Across the street is the building we own 7 of 8 units in. Currently renovating two apartments. If people arrive early, we could take a quick peek before boarding the bus. This is the first investment we made in this area. </p>
+</div></div></div></div></div>
+<section id="properties">
+<h2 style="display: flex; align-items: center;">Property Details 
+
+    
+        <path d="M12 8l6 6H6z"></path>
+</h2>
+<path d="M12 8l6 6H6z"></path>
+<path d="M12 8l6 6H6z"></path>
+<div class="property-box">
+<h3>Stop 1 - Office Conversion HOA Play</h3>
+<p>Address: 609 C. Condado, San Juan, 00907 
+            <a href="https://maps.google.com/?q=609+C.+Condado,+San+Juan,+00907">
+<img alt="Google Maps" src="images/map_icon.png" style="max-height: 1em; vertical-align: middle;"/>
+</a>
+</p>
+<div style="display: flex; flex-direction: row; align-items: flex-start;">
+<img alt="Stop 1 Image" class="property-thumbnail" src="images/stop01.jpg" style="width: 50%; max-height: 300px;"/>
+<div style="width: 50%; padding-left: 10px;">
+<p style="color: lightgrey; font-style: italic; text-align: center; margin: 0; display: flex; align-items: center; justify-content: center; height: 100%;">My Notes</p></div>
+</div>
+<p style="margin-top: 10px;">609 mixed-use 8-story building we have been converting abandoned office space into apartments for either long or short-term rents. I'll explain the way we bought it. It's a fun one. We need to decide if we use act 182 or act 60 tourism. </p>
+</div>
+<div class="property-box">
+<h3>Stop 2 - Act60 Tourism Bed &amp; Breakfast</h3>
+<p>Address: 610 C. Hoare, San Juan, 00907 
+            <a href="https://maps.google.com/?q=610+C.+Hoare,+San+Juan,+00907">
+<img alt="Google Maps" src="images/map_icon.png" style="max-height: 1em; vertical-align: middle;"/>
+</a>
+</p>
+<div style="display: flex; flex-direction: row; align-items: flex-start;">
+<img alt="Stop 2 Image" class="property-thumbnail" src="images/stop02.jpg" style="width: 50%; max-height: 300px;"/>
+<div style="width: 50%; padding-left: 10px;">
+<p style="color: lightgrey; font-style: italic; text-align: center; margin: 0; display: flex; align-items: center; justify-content: center; height: 100%;">My Notes</p></div>
+</div>
+<p style="margin-top: 10px;">Fully operational bed and breakfast using act 60 tourism for 40% tax credits. We have 740k purchase and 500k renovations including ffe. </p>
+</div>
+<div class="property-box">
+<h3>Stop 3 - Marc Weisi's Act 60 Tourism Guest House</h3>
+<p>Address: 661 Monserrate St, San Juan, 00907 
+            <a href="https://maps.google.com/?q=661+Monserrate+St,+San+Juan,+00907">
+<img alt="Google Maps" src="images/map_icon.png" style="max-height: 1em; vertical-align: middle;"/>
+</a>
+</p>
+<div style="display: flex; flex-direction: row; align-items: flex-start;">
+<img alt="Stop 3 Image" class="property-thumbnail" src="images/stop03.jpg" style="width: 50%; max-height: 300px;"/>
+<div style="width: 50%; padding-left: 10px;">
+<p style="color: lightgrey; font-style: italic; text-align: center; margin: 0; display: flex; align-items: center; justify-content: center; height: 100%;">My Notes</p></div>
+</div>
+<p style="margin-top: 10px;">This is Marc Weisi from Apex Property. He is using act 60 tourism. We will meet his contractor Carlos and look at the construction. Directly next door is an act 60 guest house that Robert once owned. Perhaps we can get inside it too. </p>
+</div>
+<div class="property-box" style="page-break-before: always !important;">
+<h3>Stop 4 - Juan Carlo's Guest House</h3>
+<p>Address: 1657 Av. Manuel Fernández Juncos, San Juan, 00909 (Patio Elba Suites) 
+            <a href="https://maps.google.com/?q=1657+Av.+Manuel+Fernández+Juncos,+San+Juan,+00909">
+<img alt="Google Maps" src="images/map_icon.png" style="max-height: 1em; vertical-align: middle;"/>
+</a>
+</p>
+<div style="display: flex; flex-direction: row; align-items: flex-start;">
+<img alt="Stop 4 Image" class="property-thumbnail" src="images/stop04.jpg" style="width: 50%; max-height: 300px;"/>
+<div style="width: 50%; padding-left: 10px;">
+<p style="color: lightgrey; font-style: italic; text-align: center; margin: 0; display: flex; align-items: center; justify-content: center; height: 100%;">My Notes</p></div>
+</div>
+<p style="margin-top: 10px;">Juan Carlo's built out this amazing guest house, and he will give us a tour of a couple of rooms and tell the story of how they bought it and put the deal together. </p>
+</div>
+<div class="property-box">
+<h3>Stop 5 - McMansion Flip</h3>
+<p>Address: E15 Clle San Isaac, San Juan, 00927 
+            <a href="https://maps.google.com/?q=Cll+San+Isaac,+San+Juan,+00927">
+<img alt="Google Maps" src="images/map_icon.png" style="max-height: 1em; vertical-align: middle;"/>
+</a>
+</p>
+<div style="display: flex; flex-direction: row; align-items: flex-start;">
+<img alt="Stop 5 Image" class="property-thumbnail" src="images/stop05.jpg" style="width: 50%; max-height: 300px;"/>
+<div style="width: 50%; padding-left: 10px;">
+<p style="color: lightgrey; font-style: italic; text-align: center; margin: 0; display: flex; align-items: center; justify-content: center; height: 100%;">My Notes</p></div>
+</div>
+<p style="margin-top: 10px;">The McMansion is a flip. We bought a big 4-family house and we are turning it into a $3M mansion fit for a king and family. Adam might have a picture. </p>
+</div>
+<div class="property-box">
+<h3>Stop 6 - Twelve-unit rented &amp; Four-unit flip</h3>
+<p>Address: 1002 C. Madrid, San Juan, 00925 
+            <a href="https://maps.google.com/?q=1002+C.+Madrid,+San+Juan,+00925">
+<img alt="Google Maps" src="images/map_icon.png" style="max-height: 1em; vertical-align: middle;"/>
+</a>
+</p>
+<div style="display: flex; flex-direction: row; align-items: flex-start;">
+<img alt="Stop 6 Image" class="property-thumbnail" src="images/stop06.jpg" style="width: 50%; max-height: 300px;"/>
+<div style="width: 50%; padding-left: 10px;">
+<p style="color: lightgrey; font-style: italic; text-align: center; margin: 0; display: flex; align-items: center; justify-content: center; height: 100%;">My Notes</p></div>
+</div>
+<p style="margin-top: 10px;">We have a 12-unit apartment building currently rented, and a 4-unit flip that's on the market. </p>
+</div>
+<div class="property-box" style="page-break-before: always !important;">
+<h3>Stop 7 - Two-building flip with Act 182 potential</h3>
+<p>Address: 54 C. Añasco, San Juan, 00927 
+            <a href="https://maps.google.com/?q=54+C.+Añasco,+San+Juan,+00927">
+<img alt="Google Maps" src="images/map_icon.png" style="max-height: 1em; vertical-align: middle;"/>
+</a>
+</p>
+<div style="display: flex; flex-direction: row; align-items: flex-start;">
+<img alt="Stop 7 Image" class="property-thumbnail" src="images/stop07.jpg" style="width: 50%; max-height: 300px;"/>
+<div style="width: 50%; padding-left: 10px;">
+<p style="color: lightgrey; font-style: italic; text-align: center; margin: 0; display: flex; align-items: center; justify-content: center; height: 100%;">My Notes</p></div>
+</div>
+<p style="margin-top: 10px;">This is two buildings we bought together for a flip. We have completed one building and are now trying to decide if we change gears and keep them as act 182? Maybe there is a deal to make within the group. </p>
+</div>
+<div class="property-box">
+<h3>Stop 8 - El Hipopótamo (Lunch)</h3>
+<p>Address: 54 C. Añasco, San Juan, 00927
+            <a href="https://maps.google.com/?q=880+PR-1+San+Juan,+00927">
+<img alt="Google Maps" src="images/map_icon.png" style="max-height: 1em; vertical-align: middle;"/>
+</a>
+</p>
+<div style="display: flex; flex-direction: row; align-items: flex-start;">
+<img alt="Stop 8 Image" class="property-thumbnail" src="images/stop08.jpg" style="width: 50%; max-height: 300px;"/>
+<div style="width: 50%; padding-left: 10px;">
+<p style="color: lightgrey; font-style: italic; text-align: center; margin: 0; display: flex; align-items: center; justify-content: center; height: 100%;">My Notes</p></div>
+</div>
+<p style="margin-top: 10px;">Lunch. Adan and Robert like this spot. Great sandwiches and I like the calamari. Everything is good.</p>
+</div>
+<div class="property-box">
+<h3>Stop 9 - FFF Fast Foreclosure Flip</h3>
+<p>Address: 1756 Cll San Alejandro, San Juan, 00927 
+            <a href="https://maps.google.com/?q=1756+Cll+San+Alejandro,+San+Juan,+00927">
+<img alt="Google Maps" src="images/map_icon.png" style="max-height: 1em; vertical-align: middle;"/>
+</a>
+</p>
+<div style="display: flex; flex-direction: row; align-items: flex-start;">
+<img alt="Stop 9 Image" class="property-thumbnail" src="images/stop09.jpg" style="width: 50%; max-height: 300px;"/>
+<div style="width: 50%; padding-left: 10px;">
+<p style="color: lightgrey; font-style: italic; text-align: center; margin: 0; display: flex; align-items: center; justify-content: center; height: 100%;">My Notes</p></div>
+</div>
+<p style="margin-top: 10px;">This is a foreclosure we bought a few weeks ago. We are doing a light rehab on it, and it's going to hopefully be a quick Puerto Rico flip. </p>
+</div>
+<div style="page-break-inside: avoid;"><div class="property-box" style="page-break-before: always !important;">
+<h3>Stop 10 - The Looking Glass Hotel (Finish)</h3>
+<p>Address: 1661 Av. Juan Ponce de León, San Juan, 00909 
+            <a href="https://maps.google.com/?q=1661+Av.+Juan+Ponce+de+León,+San+Juan,+00909">
+<img alt="Google Maps" src="images/map_icon.png" style="max-height: 1em; vertical-align: middle;"/>
+</a>
+</p>
+<div style="display: flex; flex-direction: row; align-items: flex-start;">
+<img alt="Stop 10 Image" class="property-thumbnail" src="images/stop10.jpg" style="width: 50%; max-height: 300px;"/>
+<div style="width: 50%; padding-left: 10px;">
+<p style="color: lightgrey; font-style: italic; text-align: center; margin: 0; display: flex; align-items: center; justify-content: center; height: 100%;">My Notes</p></div>
+</div>
+<p style="margin-top: 10px;">The looking glass is now owned by Jerry Norton. This is an act 60 tourism deal we bought it for 1mm did a bad renovation and sold to Jerry at 2.8mm. He did a great renovation and it came out amazing. We are back about two blocks from where we started and will end here. </p>
+</div><section class="" id="roster" style="margin-top: 0px; padding-top: 0;margin-bottom: 0 !important; padding-bottom: 0 !important; page-break-after: avoid !important;">
+<h2 style="margin-bottom: 1px;">Participant Roster 
+
+    
+        <path d="M12 8l6 6H6z"></path>
+<span style="font-size: 0.5em; margin-left: 10px;">( I = Investor, D = Deal finder, O = Operator, P = private Lender , L = Learning )</span></h2>
+<path d="M12 8l6 6H6z"></path>
+<path d="M12 8l6 6H6z"></path>
+<table style="font-size: 0.7em; line-height: 1; width: 100%; border-collapse: collapse;">
+<thead>
+<tr><th>Name</th><th>I</th><th>D</th><th>O</th><th>P</th><th>L</th><th>Aims</th></tr>
+</thead>
+<tbody><tr>
+<td style="padding: 1px;">Adán Adolfo Cebollero</td><td></td><td></td><td></td><td></td><td></td>
+<td style="padding: 1px;">Organizing a great fun event</td>
+</tr><tr>
+<td style="padding: 1px;">McKenna Crager</td><td></td><td></td><td></td><td></td><td></td>
+<td style="padding: 1px;">Organizing a great fun event</td>
+</tr><tr>
+<td style="padding: 1px;">Robert Crager</td><td></td><td></td><td></td><td></td><td></td>
+<td style="padding: 1px;">Organizing a great fun event</td>
+</tr><tr>
+<td style="padding: 1px;">Aaron St. John</td><td></td><td></td><td></td><td></td><td></td>
+<td style="padding: 1px;"></td>
+</tr><tr>
+<td style="padding: 1px;">Alain Domissy</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td>
+<td style="padding: 1px;">Networking, Learning, Deals</td>
+</tr><tr>
+<td style="padding: 1px;">Alexis Cotto</td><td>✓</td><td>✓</td><td>✓</td><td></td><td>✓</td>
+<td style="padding: 1px;">Networking and possible making a deal</td>
+</tr><tr>
+<td style="padding: 1px;">Angel Madera</td><td>✓</td><td>✓</td><td></td><td></td><td></td>
+<td style="padding: 1px;">Build long-term relationship and partner with like-minded people</td>
+</tr><tr>
+<td style="padding: 1px;">Blake Pippen</td><td>✓</td><td>✓</td><td></td><td></td><td></td>
+<td style="padding: 1px;">To network with the Apex group</td>
+</tr><tr>
+<td style="padding: 1px;">Brian Mendez</td><td>✓</td><td></td><td></td><td></td><td></td>
+<td style="padding: 1px;">Network</td>
+</tr><tr>
+<td style="padding: 1px;">Carlos Caez</td><td>✓</td><td></td><td></td><td></td><td></td>
+<td style="padding: 1px;">Relationship</td>
+</tr><tr>
+<td style="padding: 1px;">Chris Castro</td><td>✓</td><td>✓</td><td></td><td></td><td></td>
+<td style="padding: 1px;"></td>
+</tr><tr>
+<td style="padding: 1px;">Daniel Rivera</td><td>✓</td><td>✓</td><td></td><td></td><td></td>
+<td style="padding: 1px;">To network with same minded people. To invest together</td>
+</tr><tr>
+<td style="padding: 1px;">Eli Maldonado</td><td>✓</td><td></td><td>✓</td><td></td><td>✓</td>
+<td style="padding: 1px;">More insight on what to look for, general networking!</td>
+</tr><tr>
+<td style="padding: 1px;">Emanuel Mendez</td><td></td><td></td><td>✓</td><td></td><td>✓</td>
+<td style="padding: 1px;">Connections</td>
+</tr><tr>
+<td style="padding: 1px;">Israel Gonzalez</td><td>✓</td><td></td><td></td><td></td><td></td>
+<td style="padding: 1px;">Network to create partnerships</td>
+</tr><tr>
+<td style="padding: 1px;">J E Anderson</td><td>✓</td><td>✓</td><td></td><td></td><td></td>
+<td style="padding: 1px;">DSCR knowledge Deals and opm options. What I do not know education of complex real estate contracting and deals!</td>
+</tr><tr>
+<td style="padding: 1px;">Jesus Selles</td><td>✓</td><td></td><td></td><td></td><td></td>
+<td style="padding: 1px;">To hear your testimony and story on each property you will be showing to see if this group is for me or not.</td>
+</tr><tr>
+<td style="padding: 1px;">Jonathan Martinez</td><td>✓</td><td>✓</td><td>✓</td><td></td><td>✓</td>
+<td style="padding: 1px;">Long term connections with other real estate professionals</td>
+</tr><tr>
+<td style="padding: 1px;">Juan Diego Gómez Sisco</td><td>✓</td><td>✓</td><td></td><td></td><td></td>
+<td style="padding: 1px;">Getting to know the investors, show the deals I have running, and create a relationship for future deals and be a help in the community.</td>
+</tr><tr>
+<td style="padding: 1px;">Kevin Tedrick</td><td>✓</td><td></td><td></td><td></td><td>✓</td>
+<td style="padding: 1px;">I'm hoping to network, see some properties, and get a general idea of how it make the dream happen. I'm committed to being a real estate investor.</td>
+</tr><tr>
+<td style="padding: 1px;">Molly Jones</td><td></td><td></td><td>✓</td><td></td><td>✓</td>
+<td style="padding: 1px;">Learning and networking</td>
+</tr><tr>
+<td style="padding: 1px;">Noel Cabrera</td><td>✓</td><td>✓</td><td></td><td></td><td></td>
+<td style="padding: 1px;">Network and the next deal</td>
+</tr><tr>
+<td style="padding: 1px;">Otto Brewer</td><td>✓</td><td>✓</td><td>✓</td><td></td><td>✓</td>
+<td style="padding: 1px;">Inside knowledge and networking.</td>
+</tr><tr>
+<td style="padding: 1px;">Pablo Delgado</td><td></td><td></td><td>✓</td><td></td><td>✓</td>
+<td style="padding: 1px;">Networking &amp; Education</td>
+</tr><tr>
+<td style="padding: 1px;">Rene Silva</td><td></td><td></td><td></td><td></td><td>✓</td>
+<td style="padding: 1px;">Knowledge contacts hopefully at least a deal etc...</td>
+</tr><tr>
+<td style="padding: 1px;">Ruben Fernandez</td><td>✓</td><td>✓</td><td></td><td></td><td></td>
+<td style="padding: 1px;">Networking and knowledge about the process of buying and analyzing properties the right way</td>
+</tr><tr>
+<td style="padding: 1px;">Ruben Irizarry</td><td></td><td></td><td></td><td></td><td></td>
+<td style="padding: 1px;"></td>
+</tr><tr>
+<td style="padding: 1px;">Scott McLaughlin</td><td>✓</td><td></td><td></td><td></td><td></td>
+<td style="padding: 1px;">Meet people with tremendous real estate investing knowledge, gain in-person experience evaluating different investment properties.</td>
+</tr><tr>
+<td style="padding: 1px;">Taj Warner</td><td>✓</td><td>✓</td><td>✓</td><td></td><td>✓</td>
+<td style="padding: 1px;">Insights to the PR market/opportunities, networking/collaborating with talented team</td>
+</tr></tbody>
+</table>
+</section></div>
+</section>
+<footer style="margin-bottom: 0 !important; padding-bottom: 0 !important; page-break-after: avoid !important;margin-bottom: 0 !important; padding-bottom: 0 !important; page-break-after: avoid !important;">
+<p>© 2024 Apex Real Estate. All rights reserved.</p>
+<p>Join the Apex Real Estate Community to connect with fellow investors and learn more!</p>
+<p><a href="https://www.skool.com/the-apex-real-estate-pros-8347">Apex Real Estate Community</a></p>
+<p>(https://www.skool.com/the-apex-real-estate-pros-8347)</p>
+</footer>
+<script>
+document.getElementById('print-toggle').addEventListener('click', function() {
+    document.body.classList.toggle('print-view');
+    if (document.body.classList.contains('print-view')) {
+        document.body.style.background = 'white'; // Ensure clean background for print view
+        document.querySelectorAll('header, footer, .menu').forEach(el => el.style.display = 'none');
+    } else {
+        document.body.style.background = ''; // Revert background
+        document.querySelectorAll('header, footer, .menu').forEach(el => el.style.display = '');
+    }
+    alert('Toggle Print View: ' + (document.body.classList.contains('print-view') ? 'Enabled' : 'Disabled'));
+});
+</script>
+<div class="print-footer">
+© 2024 Apex Real Estate. All rights reserved.<br/>
+Join the Apex Real Estate Community to connect with fellow investors and learn more!<br/>
+https://www.skool.com/the-apex-real-estate-pros-8347
+</div></body>
+</html>
